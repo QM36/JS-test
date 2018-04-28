@@ -4,3 +4,4 @@
 * [test2.js](https://github.com/QM36/JS-test/blob/master/test2.js)给类型增加方法练习
 * [test3.js](https://github.com/QM36/JS-test/blob/master/test3.js)汉诺塔用函数递归解决
 * [test4.js](https://github.com/QM36/JS-test/blob/master/test4.js)作用域练习
+* [test5.html](https://github.com/QM36/JS-test/blob/master/test5.js)闭包练习，可以实现`html`中`body`颜色的改变
