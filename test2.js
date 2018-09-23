@@ -4,7 +4,7 @@ Function.prototype.method = function (name,func) {
 };
 
 Number.method('integer',function() {
-    return Math[this < 0 ? 'ceiling' : 'floor'](this); 
+    return Math[this < 0 ? 'ceil' : 'floor'](this); 
 });
 
 console.log((-10 / 3).integer());

@@ -5,12 +5,13 @@ var add = function (a,b) {
             message : 'add needs numbers'
         };
     }
-	return a + b;
+	//return a + b;
+	console.log(a + b);
 }
 
 var try_it = function() {
 	try {
-		add('asd');
+		add(2,3);
 	}catch(e) {
 		console.log(e.name + ":" + e.message);
 	}
