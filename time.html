@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>time</title>
+	<style type="text/css">
+		#pig {
+			border: #636363 solid thin;
+			background: url(http://p4k6er8dp.bkt.clouddn.com/pigC7AFC5DD58CEB9184BC633D9ED8BBB73);
+			background-repeat:no-repeat;
+			background-size: cover;
+			border-radius:10px;
+			padding: 20px;
+			margin: 0 auto;
+			width: 250px;
+			height: 200px;
+			margin-top: 200px;
+		}
+		#div {
+			border: #636363 solid thin;
+			border-radius:10px;
+			background-color: #ffffff;
+			opacity:0.7;
+			visibility: hidden;
+		}
+		#btn {
+			border: #636363 solid thin;
+			border-radius:5px;
+			background-color: white;
+			opacity:0.7;
+			margin-left: 75px;
+			height: 30px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="pig">
+		<div id="div">
+			你好！胖猪猪，今天是：
+			<p id="date"></p>
+			<p id="week"></p>
+			<p id="time"></p>
+		</div>
+		<button id="btn">显示时间</button>
+	</div>
+
+<script type="text/javascript">
+(function() {
+		
+	var hidden = true;
+	document.getElementById("btn").onclick = function(){
+		hidden = !hidden;
+		if(hidden) {
+			document.getElementById("div").style.visibility = "hidden";
+			document.getElementById("btn").innerHTML = "显示时间";
+		}else {
+			document.getElementById("div").style.visibility = "visible";
+			document.getElementById("btn").innerHTML = "隐藏时间";
+		}
+	}
+	function compare(num) {
+		if(num < 10) num = '0' + num;
+		return num;
+	}
+	function gettime() {
+		var now = new Date();
+		var hours = compare(now.getHours());
+		var minutes = compare(now.getMinutes());
+		var seconds = compare(now.getSeconds());
+		var dayarr = ['一','二','三','四','五','六','日'];
+		document.getElementById('date').innerHTML = "日期：" + now.getFullYear() +'-'+ now.getMonth() +'-'+ now.getDate();
+		document.getElementById('week').innerHTML = "星期：" + dayarr[now.getDay()-1];
+		document.getElementById('time').innerHTML = "时间：" + hours +':'+ minutes +':'+ seconds;
+		setTimeout(gettime, 1000);
+	}
+	gettime();
+})();
+</script>
+</body>
+</html>
