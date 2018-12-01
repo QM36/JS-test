@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#pig {
+			border: #636363 solid thin;
+			background: url(https://ws1.sinaimg.cn/large/006XqmrNly1fxftmamyd9j31hc0xc425.jpg);
+			background-repeat:no-repeat;
+			background-size: cover;
+			border-radius:5px;
+			padding: 20px;
+			margin: 0 auto;
+			width: 570px;
+			height: 370px;
+			margin-top: 80px;
+		}
+		#div {
+			border: #636363 solid thin;
+			border-radius:5px;
+			background-color: #ffffff;
+			opacity:0.7;
+			visibility: hidden;
+			padding: 30px;
+			margin-top: 30px;
+		}
+		#btn {
+			border: #636363 solid thin;
+			border-radius:5px;
+			background-color: white;
+			opacity:0.7;
+			margin-left: 230px;
+			height: 40px;
+			width: 100px;
+			margin-top: 20px;
+		}
+		#mycancas {
+			margin-left: 40px;
+		}
+		#text {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="pig">
+		<div id="div">
+			<div id="text">
+				<p>你好！今天是：</p>
+				<p id="date"></p>
+				<p id="week"></p>
+				<p id="time"></p>
+			</div>
+			<canvas id="mycancas" width="200" height="200"></canvas>
+		</div>
+		<button id="btn">显示时间</button>
+	</div>
+	
+	<script type="text/javascript">
+		(function () {
+			var drawing = document.getElementById("mycancas");
+			var hidden = true;
+	
+			if (drawing.getContext){
+				var context = drawing.getContext("2d");
+				context.translate(100, 100);
+			    render ();
+			}
+			function clear () {
+				context.clearRect(-100,-100,200,200);
+				context.restore();
+			}
+			function drawClock (mainclockRadius, subclockRadius, mainscalePosition, scalepositionlongSide, scalepositionshortSide) {
+				context.save();
+
+			    context.beginPath();//表盘
+				context.arc(0, 0, mainclockRadius, 0, 2 * Math.PI, false);
+				context.arc(0, 0, subclockRadius, 0, 2 * Math.PI, false);
+				context.stroke();
+
+				context.font = "bold 15px Arial"; //主刻度
+			    context.textAlign = "center"; 
+			    context.textBaseline = "middle"; 
+			    context.fillText("12", 0, -mainscalePosition);
+			    context.fillText("3", mainscalePosition, 0);
+			    context.fillText("6", 0, mainscalePosition);
+			    context.fillText("9", -mainscalePosition, 0);
+
+			    context.font = "bold 11px Arial"; //小刻度
+			    context.textAlign = "center"; 
+			    context.textBaseline = "middle";
+			    context.fillStyle = "#484848";
+			    context.fillText("1", scalepositionshortSide, -scalepositionlongSide);
+			    context.fillText("2", scalepositionlongSide, -scalepositionshortSide);
+			    context.fillText("4", scalepositionlongSide, scalepositionshortSide);
+			    context.fillText("5", scalepositionshortSide, scalepositionlongSide);
+			    context.fillText("7", -scalepositionshortSide, scalepositionlongSide);
+			    context.fillText("8", -scalepositionlongSide, scalepositionshortSide);
+			    context.fillText("10", -scalepositionlongSide, -scalepositionshortSide);
+			    context.fillText("11", -scalepositionshortSide, -scalepositionlongSide);
+
+			}
+			function drawPoint (hourpointLength, minpointLength, secpointLength) {
+				context.beginPath();//时针
+				context.save();
+				point(0,0,hourpointLength,getAng().hourAng);
+
+				context.beginPath();//分针
+				context.restore();
+				context.save();
+				point(0,0,minpointLength,getAng().minAng);
+
+				context.beginPath(); //秒针
+				context.restore();
+				context.save();
+				context.strokeStyle = "red";
+				context.lineWidth = 2;
+				point(0,20,secpointLength,getAng().secAng);
+			}
+			function point (x,y,length,angle) {
+				context.rotate(angle);
+				context.moveTo(x, y); //起始位置
+				context.lineTo(0, -length);//针
+				context.stroke();
+			}
+			function getAng () {
+				var now = new Date();
+				var hourAng= getTime(now).hours % 12 / 12 * 2 * Math.PI;
+				var minAng = getTime(now).minutes / 60 * 2 * Math.PI;
+				var secAng = getTime(now).seconds / 60 * 2 * Math.PI;
+				return {hourAng, minAng, secAng};
+			}
+			function render () {
+				clear ()
+				drawClock (99, 94, 80, 40 * Math.sqrt(3), 40);
+				drawPoint (50, 80, 70);
+				setTimeout(render, 1000);
+			}
+			function getTime (now) {
+				var hours = now.getHours();
+				var minutes = now.getMinutes();
+				var seconds = now.getSeconds();
+				var years = now.getFullYear();
+				var months = now.getMonth()
+				var dates = now.getDate();
+				var weeks = now.getDay();
+				return {hours, minutes, seconds, years, months, dates, weeks};
+			} 
+			document.getElementById("btn").onclick = function(){
+				hidden = !hidden;
+				if(hidden) {
+					document.getElementById("div").style.visibility = "hidden";
+					document.getElementById("btn").innerHTML = "显示时间";
+				}else {
+					document.getElementById("div").style.visibility = "visible";
+					document.getElementById("btn").innerHTML = "隐藏时间";
+				}
+			}
+			function compare(num) {
+				if(num < 10) num = '0' + num;
+				return num;
+			}
+			function showTime() {
+				var now = new Date();
+				var dayarr = ['一','二','三','四','五','六','日'];
+				document.getElementById('date').innerHTML = "日期：" + getTime(now).years +'-'+ getTime(now).months +'-'+ getTime(now).dates;
+				document.getElementById('week').innerHTML = "星期：" + dayarr[getTime(now).weeks-1];
+				document.getElementById('time').innerHTML = "时间：" + compare(getTime(now).hours) +':'+ compare(getTime(now).minutes) +':'+ compare(getTime(now).seconds);
+				setTimeout(showTime, 1000);
+			}
+			showTime();
+		})();
+		
+
+	</script>
+
+</body>
+</html>
+
+<!-- 
+问题：
+1. getTime函数写的有没有意义，或者能不能改进，因为每需要一个时间值都需要调用这个函数，就要New一个date，能不能在一秒钟只调用一次，然后直接去拿那个值就好 
+2. 返回值作为数组好一点还是对象好一点
+-->
