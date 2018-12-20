@@ -11,3 +11,5 @@
 ### 在后期学习中的练习
 
 ### 在头条面试中的编程题
+
+[bytedance](https://github.com/QM36/JS-test/tree/master/bytedance)
