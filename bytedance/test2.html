@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table id="table" border="1">
+		<tr>
+			<td>1000</td>
+		    <td>2000</td>
+		    <td>3000</td>
+		    <td>4000</td>
+		</tr>
+	    <tr>
+			<td>5000</td>
+		    <td>6000</td>
+		    <td>7000</td>
+		    <td>8000</td>
+		</tr>
+	</table>
+<script type="text/javascript">
+	document.getElementById("table").onclick = function(event) { //注意点击事件的绑定，并且区分jquery
+		if(event.target.tagName == "TD") { //需要区分这里的标签名，否则会有tr或table,而且是大写的名称
+			var value = event.target.innerHTML;//获取值，这里还可以用innerText
+			console.log(value);
+		}	
+	};
+</script>
+</body>
+</html>
