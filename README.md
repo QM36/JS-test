@@ -8,7 +8,7 @@
 * [test6.html](https://github.com/QM36/JS-test/blob/master/test6.html)还有`bug`
 * [test7.js](https://github.com/QM36/JS-test/blob/master/test7.js)返回值是对象
 
-### 在后期学习中的练习
+### 在红宝书中的练习总结
 
 ### 在头条面试中的编程题
 

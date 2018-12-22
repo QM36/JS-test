@@ -20,7 +20,7 @@
 	</table>
 <script type="text/javascript">
 	document.getElementById("table").onclick = function(event) { //注意点击事件的绑定，并且区分jquery
-		if(event.target.tagName == "TD") { //需要区分这里的标签名，否则会有tr或table,而且是大写的名称
+		if((event.target.tagName).toUpperCase() == "TD") { //需要区分这里的标签名，否则会有tr或table,但是由于浏览器不同大小写不同，所以统一转换成大写
 			var value = event.target.innerHTML;//获取值，这里还可以用innerText
 			console.log(value);
 		}	
