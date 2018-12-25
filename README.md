@@ -13,3 +13,9 @@
 ### 在头条面试中的编程题
 
 [bytedance](https://github.com/QM36/JS-test/tree/master/bytedance)
+
+### 其余时间的练习
+* [css-test.html](https://github.com/QM36/JS-test/blob/master/css-class.html)这是一个关于css的类选择器的练习
+* [grid.html](https://github.com/QM36/JS-test/blob/master/grid.html)这是一个网格布局的练习
+* [clock.html](https://github.com/QM36/JS-test/blob/master/clock.html)这是用canvas写的一个钟表
+* [flex.html](https://github.com/QM36/JS-test/blob/master/flex.html)这是用flex写的一个筛子图
