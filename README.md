@@ -4,8 +4,8 @@
 * [test2.js](https://github.com/QM36/JS-test/blob/master/test2.js)给类型增加方法练习
 * [test3.js](https://github.com/QM36/JS-test/blob/master/test3.js)汉诺塔用函数递归解决
 * [test4.js](https://github.com/QM36/JS-test/blob/master/test4.js)作用域练习
-* [test5.html](https://github.com/QM36/JS-test/blob/master/test5.html)闭包练习，可以实现`html`中`body`颜色的改变
-* [test6.html](https://github.com/QM36/JS-test/blob/master/test6.html)还有`bug`
+* [test5.html](https://github.com/QM36/JS-test/blob/master/test5.html)闭包练习，可以实现`html`中`body`颜色的改变,[demo预览](http://qm36mmz.xyz/JS-test/test5.html)
+* [test6.html](https://github.com/QM36/JS-test/blob/master/test6.html)还有`bug`,[demo预览](http://qm36mmz.xyz/JS-test/test6.html)
 * [test7.js](https://github.com/QM36/JS-test/blob/master/test7.js)返回值是对象
 
 ### 在红宝书中的练习总结
@@ -15,8 +15,8 @@
 [bytedance](https://github.com/QM36/JS-test/tree/master/bytedance)
 
 ### 其余时间的练习
-* [css-test.html](https://github.com/QM36/JS-test/blob/master/css-class.html)这是一个关于css的类选择器的练习
-* [grid.html](https://github.com/QM36/JS-test/blob/master/grid.html)这是一个网格布局的练习
-* [clock.html](https://github.com/QM36/JS-test/blob/master/clock.html)这是用canvas写的一个钟表
-* [flex.html](https://github.com/QM36/JS-test/blob/master/flex.html)这是用flex写的一个筛子图
-* [cookie.html](https://github.com/QM36/JS-test/blob/master/cookie.html)关于cookie
+* [css-test.html](https://github.com/QM36/JS-test/blob/master/css-class.html)这是一个关于css的类选择器的练习,[demo预览](http://qm36mmz.xyz/JS-test/css-class.html)
+* [grid.html](https://github.com/QM36/JS-test/blob/master/grid.html)这是一个网格布局的练习,[demo预览](http://qm36mmz.xyz/JS-test/grid.html)
+* [clock.html](https://github.com/QM36/JS-test/blob/master/clock.html)这是用canvas写的一个钟表,[demo预览](http://qm36mmz.xyz/JS-test/clock.html)
+* [flex.html](https://github.com/QM36/JS-test/blob/master/flex.html)这是用flex写的一个筛子图,[demo预览](http://qm36mmz.xyz/JS-test/flex.html)
+* [cookie.html](https://github.com/QM36/JS-test/blob/master/cookie.html)关于cookie,[demo预览](http://qm36mmz.xyz/JS-test/cookie.html)
