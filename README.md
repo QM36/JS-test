@@ -19,3 +19,4 @@
 * [grid.html](https://github.com/QM36/JS-test/blob/master/grid.html)这是一个网格布局的练习
 * [clock.html](https://github.com/QM36/JS-test/blob/master/clock.html)这是用canvas写的一个钟表
 * [flex.html](https://github.com/QM36/JS-test/blob/master/flex.html)这是用flex写的一个筛子图
+* [cookie.html](https://github.com/QM36/JS-test/blob/master/cookie.html)关于cookie
