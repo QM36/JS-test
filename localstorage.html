@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var ls = localStorage;
+		console.log(ls.length);
+		ls.setItem("name", "QM");//存储的是键值对
+		ls.setItem('age','20');
+		console.log(ls.length);
+		for(var i=0;i<ls.length;i++){
+            var key=ls.key(i);//根据index获取建名
+            console.log(key+' : '+ls.getItem(key));//根据key获取值
+        }
+        // ls.removeItem('age');//删除一个键值对
+        for(var i=0;i<ls.length;i++){
+            var key=ls.key(i);//根据index获取建名
+            console.log(key+' : '+ls.getItem(key));//根据key获取值
+        }
+        // ls.clear();//清空storage对象
+        console.log(ls.length);
+
+        window.onstorage = function(e){
+			console.log(e.key+' is changed form '+e.oldValue+' to '+e.newValue+' by '+e.url );
+            console.log(e.storageArea == localStorage);
+		}
+
+		
+	</script>
+
+</body>
+<!-- <body>
+<p>You have viewed this page <span id="count">0</span>  time(s).</p>
+<p><input type="button" value="changeStorage" onClick="changeS()"/></p>
+<script>
+var storage = window.localStorage;
+if (!storage.getItem("pageLoadCount")) storage.setItem("pageLoadCount",0);
+storage.pageLoadCount = parseInt(storage.getItem("pageLoadCount")) + 1;//必须格式转换
+document.getElementById("count").innerText = storage.pageLoadCount;
+showStorage();
+if(window.addEventListener){
+ window.addEventListener("storage",handle_storage,false);
+}else if(window.attachEvent){
+ window.attachEvent("onstorage",handle_storage);
+}
+function handle_storage(e){
+ if(!e){e=window.event;}
+ showObject(e);
+}
+function showObject(obj){
+ //递归显示object
+ if(!obj){return;}
+ for(var i in obj){
+  if(typeof(obj[i])!="object" || obj[i]==null){
+   document.write(i + " : " + obj[i] + "<br/>");
+  }else{
+   document.write(i + " : object" + "<br/>");
+  }
+ }
+}
+storage.setItem("a",5);
+function changeS(){
+ //修改一个键值，测试storage事件
+ if(!storage.getItem("b")){storage.setItem("b",0);}
+ storage.setItem('b',parseInt(storage.getItem('b'))+1);
+}
+function showStorage(){
+ //循环显示localStorage里的键值对
+ for(var i=0;i<storage.length;i++){
+  //key(i)获得相应的键，再用getItem()方法获得对应的值
+  document.write(storage.key(i)+ " : " + storage.getItem(storage.key(i)) + "<br>");
+ }
+}
+</script>
+</body> -->
+</html>
