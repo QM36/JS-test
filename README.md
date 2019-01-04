@@ -21,3 +21,4 @@
 * [flex.html](https://github.com/QM36/JS-test/blob/master/flex.html)这是用flex写的一个筛子图,[demo预览](http://qm36mmz.xyz/JS-test/flex.html)
 * [cookie.html](https://github.com/QM36/JS-test/blob/master/cookie.html)关于cookie,[demo预览](http://qm36mmz.xyz/JS-test/cookie.html)
 * [localstorage.html](https://github.com/QM36/JS-test/blob/master/cookie.html)关于localstorage一些属性和方法的练习,[demo预览](http://qm36mmz.xyz/JS-test/localstorage.html)
+* [iframe.html](https://github.com/QM36/JS-test/blob/master/iframe.html)网易云歌单外链，[demo预览](http://qm36mmz.xyz/JS-test/iframe.html)
